@@ -1,0 +1,29 @@
+public class QuickSort : SortingAlgorithm{
+
+	public void sort(int[ ] arr, int start, int end){
+	 if(start >= end) return;
+		 int left=start;
+		 int right=end-1;
+		 int pivot=arr[end];
+		
+		while(left<=right){
+		
+			if(arr[left]<=pivot){
+			 left++;
+			   }
+			else{
+			    int temp=arr[left];
+				arr[left]=arr[right];
+				arr[right]=temp;
+				right--;
+
+			}
+		}
+			arr[end]=arr[left];
+			arr[left]=pivot;
+		
+		sort(arr,start,left-1);
+		sort(arr,left+1,end);
+		}
+		
+	}
