@@ -1,7 +1,4 @@
-interface SortingAlgorithm{
- 
-	public int[] sort(int[] arr);
-}
+
 
 public class BubbleSort :  SortingAlgorithm{
 
