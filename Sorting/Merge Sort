@@ -1,0 +1,44 @@
+public class MergeSort : SortingAlgorithm{
+
+	public void sort(int[ ] arr, int start, int end){
+		if(start<end){ 
+		int mid=(start+end)/2;
+	  sort(arr,start,mid);
+	  sort(arr,mid+1,end);
+	Sorting(arr,start,mid,end);
+		}
+		
+		}
+	
+	 public void Sorting(int[] arr, int start,int mid, int end){
+		int[] left=arr[start..(mid+1)];
+		int[] right=arr[(mid+1)..(end+1)];
+	     int x=start;
+		 Console.WriteLine(start);
+		 Console.WriteLine(end);
+		 int l=0;
+		 int r=0;
+		 while(l<left.Length && r<right.Length){
+		    
+		     if(left[l]<right[r]){
+			  
+				  arr[x++]=left[l];
+				 l++;
+			 }else{
+			 
+			   arr[x++]=right[r];
+				 r++;
+			 }
+		 }
+			 while(l<left.Length){
+			  
+				  arr[x++]=left[l]; l++;
+			 }
+			  while(r<right.Length){
+			  
+				  arr[x++]=right[r]; r++;
+			 }
+	 
+	 }
+		
+	}
