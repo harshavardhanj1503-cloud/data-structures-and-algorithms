@@ -1,0 +1,25 @@
+public static string LongestSubstringWithoutRepeatingChars(string input)
+    {
+        int left = 0;
+        string longest = string.Empty;
+
+        HashSet<char> window = new HashSet<char>();
+
+        for (int right = 0; right < input.Length; right++)
+        {
+            while (window.Contains(input[right]))
+            {
+                window.Remove(input[left]);
+                left++;
+            }
+
+            window.Add(input[right]);
+
+            string current = input.Substring(left, right - left + 1);
+            if (current.Length > longest.Length)
+            {
+                longest = current;
+            }
+        }
+ return longest;
+    }
